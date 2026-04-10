@@ -1,0 +1,49 @@
+<svg width="64" height="64" viewBox="0 0 128 128" xmlns="http://www.w3.org/2000/svg" fill="none">
+  <defs>
+    <linearGradient id="catYellow" x1="20" y1="20" x2="108" y2="108" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#FFE082"></stop>
+      <stop offset="1" stop-color="#FBC02D"></stop>
+    </linearGradient>
+
+    <filter id="softShadow" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="0" dy="3" stdDeviation="3" flood-color="#000" flood-opacity="0.18"></feDropShadow>
+    </filter>
+  </defs>
+
+  <!-- Orejas -->
+  <path d="M31 46L43 16L57 40" fill="url(#catYellow)" stroke="#2B2B2B" stroke-width="4" stroke-linejoin="round"></path>
+  <path d="M97 46L85 16L71 40" fill="url(#catYellow)" stroke="#2B2B2B" stroke-width="4" stroke-linejoin="round"></path>
+
+  <!-- Cara -->
+  <circle cx="64" cy="70" r="36" fill="url(#catYellow)" stroke="#2B2B2B" stroke-width="4" filter="url(#softShadow)"></circle>
+
+  <!-- Lentes -->
+  <circle cx="51" cy="68" r="10" fill="#FFF8E1" stroke="#2B2B2B" stroke-width="4"></circle>
+  <circle cx="77" cy="68" r="10" fill="#FFF8E1" stroke="#2B2B2B" stroke-width="4"></circle>
+  <path d="M61 68H67" stroke="#2B2B2B" stroke-width="4" stroke-linecap="round"></path>
+
+  <!-- Ojitos -->
+  <circle cx="51" cy="69" r="3.2" fill="#2B2B2B"></circle>
+  <circle cx="77" cy="69" r="3.2" fill="#2B2B2B"></circle>
+
+  <!-- Brillos -->
+  <circle cx="53" cy="67" r="1.2" fill="white"></circle>
+  <circle cx="79" cy="67" r="1.2" fill="white"></circle>
+
+  <!-- Nariz -->
+  <path d="M64 78L59 83H69L64 78Z" fill="#FF8A80" stroke="#2B2B2B" stroke-width="2"></path>
+
+  <!-- Boca -->
+  <path d="M64 83V88" stroke="#2B2B2B" stroke-width="3" stroke-linecap="round"></path>
+  <path d="M64 88C61 92 57 94 53 94" stroke="#2B2B2B" stroke-width="3" stroke-linecap="round"></path>
+  <path d="M64 88C67 92 71 94 75 94" stroke="#2B2B2B" stroke-width="3" stroke-linecap="round"></path>
+
+  <!-- Bigotes -->
+  <path d="M25 76H41" stroke="#2B2B2B" stroke-width="3" stroke-linecap="round"></path>
+  <path d="M27 85H41" stroke="#2B2B2B" stroke-width="3" stroke-linecap="round"></path>
+  <path d="M87 76H103" stroke="#2B2B2B" stroke-width="3" stroke-linecap="round"></path>
+  <path d="M87 85H101" stroke="#2B2B2B" stroke-width="3" stroke-linecap="round"></path>
+
+  <!-- Detalle programación -->
+  <text x="64" y="116" text-anchor="middle" font-size="20" font-family="Arial, sans-serif" font-weight="700" fill="#2B2B2B">&lt;/&gt;</text>
+</svg>
