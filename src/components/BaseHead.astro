@@ -2,16 +2,28 @@
 // Import the global.css file here so that it is included on
 // all pages through the use of the <BaseHead /> component.
 import "../styles/global.css";
+import { SOCIAL_LINKS } from '../consts';
 
 interface Props {
   title: string;
   description: string;
-  image: string;
+  image?: string;
 }
 
 const canonicalURL = new URL(Astro.url.pathname, Astro.site);
 
-const { title, description, image } = Astro.props;
+const { title, description, image = '/social-card.png' } = Astro.props;
+
+const personSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'Person',
+  name: 'Augusto Castillo Vergara',
+  jobTitle: 'Software Engineer',
+  description,
+  url: canonicalURL.origin,
+  sameAs: [SOCIAL_LINKS.github, SOCIAL_LINKS.linkedin],
+  knowsAbout: ['Java', 'Spring Boot', 'Backend development', 'Web development'],
+};
 ---
 
 <!-- Global Metadata -->
@@ -19,18 +31,36 @@ const { title, description, image } = Astro.props;
 <meta name="viewport" content="width=device-width,initial-scale=1" />
 <link rel="icon" type="image/svg+xml" href="/gateto.svg" />
 <meta name="generator" content={Astro.generator} />
+<meta name="theme-color" content="#131210" />
+
+<!-- Apply theme + enable motion before first paint (no flash of wrong theme). -->
+<script is:inline>
+  (function () {
+    try {
+      var stored = localStorage.getItem('theme');
+      var theme = stored || (window.matchMedia('(prefers-color-scheme: light)').matches ? 'light' : 'dark');
+      var root = document.documentElement;
+      root.dataset.theme = theme;
+      if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches && 'IntersectionObserver' in window) {
+        root.classList.add('motion-ready');
+      }
+      var meta = document.querySelector('meta[name="theme-color"]');
+      if (meta) meta.setAttribute('content', theme === 'light' ? '#f6f4ef' : '#131210');
+    } catch (e) {}
+  })();
+</script>
 
 <!-- Font preloads -->
 <link
   rel="preload"
-  href="/fonts/atkinson-regular.woff"
+  href="/fonts/Satoshi-Regular.woff"
   as="font"
   type="font/woff"
   crossorigin
 />
 <link
   rel="preload"
-  href="/fonts/atkinson-bold.woff"
+  href="/fonts/Satoshi-Bold.woff"
   as="font"
   type="font/woff"
   crossorigin
@@ -46,14 +76,18 @@ const { title, description, image } = Astro.props;
 
 <!-- Open Graph / Facebook -->
 <meta property="og:type" content="website" />
-<meta property="og:url" content={Astro.url} />
+<meta property="og:url" content={canonicalURL} />
 <meta property="og:title" content={title} />
 <meta property="og:description" content={description} />
-<meta property="og:image" content={new URL(image, Astro.url)} />
+<meta property="og:image" content={new URL(image, canonicalURL)} />
+<meta property="og:image:alt" content="Augusto Castillo Vergara — Software Engineer. Java, Spring Boot, and modern web development." />
 
 <!-- Twitter -->
 <meta property="twitter:card" content="summary_large_image" />
-<meta property="twitter:url" content={Astro.url} />
+<meta property="twitter:url" content={canonicalURL} />
 <meta property="twitter:title" content={title} />
 <meta property="twitter:description" content={description} />
-<meta property="twitter:image" content={new URL(image, Astro.url)} />
+<meta property="twitter:image" content={new URL(image, canonicalURL)} />
+
+<!-- Structured data -->
+<script type="application/ld+json" is:inline set:html={JSON.stringify(personSchema)} />

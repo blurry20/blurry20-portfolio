@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630">
+  <rect width="1200" height="630" fill="#0d1224" />
+  <path d="M72 90H1128M72 548H1128" stroke="#29324c" />
+  <circle cx="88" cy="145" r="6" fill="#f6b568" />
+  <g font-family="Arial, sans-serif">
+    <text x="111" y="151" fill="#f6b568" font-size="18" letter-spacing="3">SOFTWARE ENGINEER / BACKEND &amp; WEB</text>
+    <text x="72" y="270" fill="#e0e5f3" font-size="76" font-weight="bold" letter-spacing="-3">Augusto</text>
+    <text x="72" y="357" fill="#e0e5f3" font-size="76" font-weight="bold" letter-spacing="-3">Castillo Vergara<tspan fill="#f6b568">.</tspan></text>
+    <text x="76" y="425" fill="#a7b0ca" font-size="27">Thoughtful code. Reliable systems.</text>
+    <text x="76" y="503" fill="#e0e5f3" font-size="18">Java &amp; Spring Boot · Modern web development</text>
+    <text x="76" y="583" fill="#a7b0ca" font-size="16">blurry20.vercel.app</text>
+  </g>
+  <g transform="translate(952 310)" fill="none" stroke="#f6b568">
+    <circle r="116" stroke-opacity=".2" />
+    <circle r="90" stroke-opacity=".35" />
+    <path d="M-35-30-65 0-35 30M35-30 65 0 35 30M15-48-15 48" stroke-width="5" stroke-linecap="round" stroke-linejoin="round" />
+  </g>
+</svg>
